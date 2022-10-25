@@ -8,7 +8,7 @@ In many Natural Language tasks is that you have a language (L) and want to build
 
 ## Source Channel Framework
 
-![alt text]([http://url/to/img.png](https://github.com/louisds/NLP-projects/blob/main/images/noisy_channel_model.png))
+![alt text](https://github.com/louisds/NLP-projects/blob/main/images/noisy_channel_model.png)
 
 
 ## Perplexity
