@@ -31,8 +31,12 @@ If we have a sequence of $n$ words, the number of histories (consisting of a ser
 We want our language model $M$ to assign high probabilities to sentences that are real and synthetically correct. The best model is the one that assigns the highest probability to the test set. The perplexity is a measure to quantify how "good" a language model is, based on a test (or validation) set. The perplexity on a sequence $s$ of words is defined as:
 
 $$
-Perplexity(M) = M(s)^{(-1/n)} = \left( \Pi_k P(w_k|w_1, ..., w_{k-1})\right)^{(-1/n)}
+Perplexity(M) = M(s)^{(-1/n)} = \left( p(w_1, ..., w_n)\right)^{(-1/n)}
 $$
+
+The intuition behind this metric is that if a model assigns a high probability to a test set, it is not surprised to see it (not perplexed by it), which means the model M has a good understanding of how the language L works. Hence, a good model has a lower perplexity. The exponent (-1/n) in the formula is just a normalizing strategy (geometric average), because adding more sentences to a test set would otherwise introduce more uncertainty (i.e. larger test sets would have lower probability). So by introducing the geometric average, we have a metric that is independent of the size of the test set. 
+
+## Pointwise Mutual Information (PMI)
 
 ## Entropy (in language)
 
