@@ -6,6 +6,10 @@ In short, syntax refers to grammar, while semantics refers to meaning. **Syntax*
 
 In many Natural Language tasks you have a language (L) and want to build a model (M) for the language. In NLP we think of language L as a process for generating text, where the process is a collection of probability distributions. Given a history $h$ consisting of a series of previous words in a sentence, the language $L$ is the probability that the next word is $w$. Similarly, given an entire sentence $s$, we can evaluate $L(s)$ as the probability of the sentence occurring. A language model M will try to replicate this language, which we can then use for various tasks. 
 
+$$
+p(w_1, ..., w_n) = p(w_1) \cdot p(w_2|w_1) ... p(w_n|w_1, ..., w_{n-1})
+$$
+
 ## Source Channel Framework
 
 ![alt text](https://github.com/louisds/NLP-projects/blob/main/images/noisy_channel_model.png)
@@ -17,6 +21,10 @@ An example of a noisy channel for spell checking is a channel that scrambles som
 $$
 X' = argmax_x \ P(x|Y) = argmax_x \ \frac{p(x) p(Y|x)}{P(Y)} \propto argmax_x \ p(w) p(Y|x)
 $$
+
+## N-grams
+
+If we have a sequence of $n$ words, A history $h$ ,consisting of a series of previous words, 
 
 
 ## Perplexity
@@ -40,8 +48,6 @@ $$
 ## Inverse Document Frequency (IDF)
 
 ## Term Frequency–Inverse Document Frequency (TF-IDF)
-
-## N-grams
 
 ## Skip gram
 
