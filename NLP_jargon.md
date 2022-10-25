@@ -2,9 +2,19 @@
 
 Put simply, syntax refers to grammar, while semantics refers to meaning. **Syntax** is the set of rules needed to ensure a sentence is grammatically correct. **Semantics** is how one’s lexicon, grammatical structure, tone, and other elements of a sentence coalesce to communicate its meaning. 
 
-## Entropy (in language)
+## Language Model
+
+In many Natural Language tasks is that you have a language (L) and want to build a model (M) for the language. In NLP we think of language L as a process for generating text, where the process is a collection of probability distributions. Given a history $$h$$ consisting of a series of previous words in a sentence, the language $$L$$ is the probability that the next word is $$w$$. Similarly, given an entire sentence $$s$$, we can evaluate $$L(s)$$ as the probability of the sentence occurring. A language model M will try to replicate this language, which we can then use for various tasks. 
+
+## Source Channel Framework
+
+
 
 ## Perplexity
+
+
+
+## Entropy (in language)
 
 ## Dependency (Syntactic) vs. Constituency Parsing
 
