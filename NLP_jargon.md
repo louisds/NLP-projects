@@ -24,12 +24,15 @@ $$
 
 ## N-grams
 
-If we have a sequence of $n$ words, A history $h$ ,consisting of a series of previous words, 
-
+If we have a sequence of $n$ words, the number of histories (consisting of a series of previous words) grows as $|V|^{n-1}$, while the number of parameters in our model grows as $|V|^{n}$, where V is our vocabulary. To reduce the number of parameters, we group histories with a particular grouping method. N-gram language modeling is a popular grouping method, where the probability of a given sequence of N words is predicted. For example in case of a trigram (3-gram), we ignore everything except for the previous two words when we try to predict the next word (number of parameters is of the order $|V|^{3}$).
 
 ## Perplexity
 
+We want our language model $M$ to assign high probabilities to sentences that are real and synthetically correct. The best model is the one that assigns the highest probability to the test set. The perplexity is a measure to quantify how "good" a language model is, based on a test (or validation) set. The perplexity on a sequence $s$ of words is defined as:
 
+$$
+Perplexity(M) = M(s)^(-1/n) = \left( \frac{1}{M} \right)
+$$
 
 ## Entropy (in language)
 
