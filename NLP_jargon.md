@@ -1,5 +1,7 @@
 ## Syntax vs. Semantics
 
+Put simply, syntax refers to grammar, while semantics refers to meaning. **Syntax** is the set of rules needed to ensure a sentence is grammatically correct. **Semantics** is how one’s lexicon, grammatical structure, tone, and other elements of a sentence coalesce to communicate its meaning. 
+
 ## Entropy (in language)
 
 ## Perplexity
