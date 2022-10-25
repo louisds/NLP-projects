@@ -12,6 +12,10 @@ For classification tasks, we have Multinomial and Bernoulli Naive Bayes. This is
 
 Naive Bayes algorithms are mostly used in sentiment analysis, spam filtering, recommendation systems etc. They are fast and easy to implement, i.e. they converge faster and requires less training data. Compared to other discriminative models like logistic regression, the Naive Bayes model it takes lesser time to train. Their biggest disadvantage, however, is the requirement of predictors to be independent. In most of the real life cases, the predictors are dependent, this hinders the performance of the classifier.
 
-## Which algorithms are used for Extraction-Based Text Summarization
+## Which algorithms are used for Extraction-Based Text Summarization?
+
+Text summarization is the process of shortening a long piece of text with its meaning and effect intact. 
+
+## Explain Dependency (Syntactic) Parsing in NLP?
 
 
