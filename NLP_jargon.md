@@ -1,6 +1,20 @@
-## Dependency (Syntactic) Parsing
+## Syntax vs. Semantics
 
-## Constituency Parsing
+## Entropy (in language)
+
+## Perplexity
+
+## Dependency (Syntactic) vs. Constituency Parsing
+
+## Ontologies
+
+## Information Extraction
+
+## Entity Recognition vs. Disambiguation vs. Linking
+
+## Document Retrieval and Search
+
+## Relation Extraction
 
 ## Inverse Document Frequency (IDF)
 
@@ -12,11 +26,13 @@
 
 ## Bag of words
 
-## Pragmatic Ambiguity
+## Pragmatic/Lexical/Syntactic/Semantic Ambiguity
 
 ## Masked Language Model
 
 ## POS tagging
+
+## Ensemble Method
 
 ## Name Entity Recognition (NER)
 
@@ -36,9 +52,34 @@
 
 ## Latent Dirichlet Allocation (LDA)
 
-## Transform Learning
+## Transfer Learning
+
+## Multi Task Learning
+
+## Feature-Extraction vs. Fine Tuning
 
 ## Token, Segment and Position embedding
 
+## Attention mechanism
 
+## Transformer
 
+## Permutation-Based Language Modelling
+
+## Scheduling Learning Rate
+
+## Label Smoothening
+
+## Parameter Sharing
+
+## Sentence Order Prediction (SOP)
+
+## Embedding Factorization
+
+## Precision
+
+## Recall
+
+## F1 score
+
+## AUC
