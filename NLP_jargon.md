@@ -31,7 +31,7 @@ If we have a sequence of $n$ words, the number of histories (consisting of a ser
 We want our language model $M$ to assign high probabilities to sentences that are real and synthetically correct. The best model is the one that assigns the highest probability to the test set. The perplexity is a measure to quantify how "good" a language model is, based on a test (or validation) set. The perplexity on a sequence $s$ of words is defined as:
 
 $$
-Perplexity(M) = M(s)^{(-1/n)} = \left( \Pi_k \ P(w_k|w_1, ..., w_{k-1})} \right)^{(-1/n)}
+Perplexity(M) = M(s)^{(-1/n)} = ( \Pi_k \ P(w_k|w_1, ..., w_{k-1})})^{(-1/n)}
 $$
 
 ## Entropy (in language)
