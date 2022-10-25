@@ -1,2 +1,2 @@
 # NLP-projects
-Projects involving NLP, sorted by which algorithms are used. 
+Projects involving NLP, sorted by task and which algorithms are used. 
