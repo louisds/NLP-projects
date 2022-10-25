@@ -15,7 +15,7 @@ The source channel framework or noisy channel framework is a framerwork used in 
 An example of a noisy channel for spell checking is a channel that scrambles some letters in an input sentence (and thus producing spelling errors). In this case, the correct language (real language) is the input X, while the output Y is the language with errors (observed language). The probability P(X) is the probability of the word sequence in the correct language (language model probability). The probability P(Y|X) is the probability that we have a specific scrambled output sentence Y, giving a specific input sentence X (noisy channel probability). The goal of the framework is the obtain X', based on the probability P(X|Y): 
 
 $$
-X' = argmax P(x|Y) = argmax \frac{p(x) p(Y|x)}{P(Y)} \propto argmax p(w) p(Y|x)
+X' = argmax_x \: P(x|Y) = argmax_x \: \frac{p(x) p(Y|x)}{P(Y)} \propto argmax_x \: p(w) p(Y|x)
 $$
 
 
