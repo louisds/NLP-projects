@@ -1,18 +1,26 @@
 # 1) Linguistics and NLP Tasks
 
-## Syntax vs. Semantics
+## Lexicon
 
 In short, syntax refers to grammar, while semantics refers to meaning. **Syntax** is the set of rules needed to ensure a sentence is grammatically correct. **Semantics** is how one’s lexicon, grammatical structure, tone, and other elements of a sentence coalesce to communicate its meaning. 
 
-## Semantic vs. Pragmatic approach
+## Pragmatics vs. Semantics vs. Syntax vs. Morphology vs. Phonology vs. Phonetics
 
-**Semantics** is the literal meaning of words and phrases. It has two main categories: lexical semantics and phrasal semantics. Lexical semantics concerns the meanings of words and the meaning of relationships among words, i.e. analyze words and see how they can be related to each other with relations to synonyms, antonyms, homonyms, polysemy, figures of speech. Phrasal semantics concerns the meaning of syntactic units, i.e. concepts such as paraphrase, contradiction, ambiguity, mutual entailment, etc.
+![alt text](https://github.com/louisds/NLP-projects/blob/main/images/semantic_pragmatic.png)
 
 **Pragmatics** identifies the meaning of words and phrases based on how language is used to communicate (i.e. emphasis on their context as well). Unlike semantics, which only concerns the meaning of the words, pragmatics goes a step further by looking at the same word in relation to its context. Thus, pragmatics explains how language users are able to overcome apparent ambiguity since it explains the meaning relies on the manner, time, place, etc. of an utterance.
 
+**Semantics** is the literal meaning of words and phrases. It has two main categories: lexical semantics and phrasal semantics. Lexical semantics concerns the meanings of words and the meaning of relationships among words, i.e. analyze words and see how they can be related to each other with relations to synonyms, antonyms, homonyms, polysemy, figures of speech. Phrasal semantics concerns the meaning of syntactic units, i.e. concepts such as paraphrase, contradiction, ambiguity, mutual entailment, etc.
+
 For example, the sentence – “He is so cool”. Semantically, this sentence can be interpreted as – He is very nice, a compliment to the person, which is the literal meaning. But under pragmatics, this sentence suggests the context: the positive attitude of the speaker towards the person. This is the intended or the inferred meaning in the sentence.
 
+**Syntax** is the set of rules needed to ensure a sentence is grammatically correct (article, noun, verb, ...). Syntax refers to grammar, while semantics refers to meaning. 
 
+**Morphology** analyzes the structure of words and parts of words such as stems, root words, prefixes, and suffixes (i.e. how words are formed).
+
+**Phonology** concerns the study of more complex and abstract sound patterns and structures (syllables, intonation, etc.), i.e. different patterns of sounds in different positions in words etc.
+
+**Phonetcs** studies how humans produce and perceive sounds. 
 
 ## Dependency (Syntactic) vs. Constituency Parsing
 
