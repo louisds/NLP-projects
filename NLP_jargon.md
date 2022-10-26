@@ -341,6 +341,16 @@ Next to single-head attention, we also have multi-head attention. Multi-head att
 
 ## Transformer
 
+A Transformer is an architecture that aims to solve seq2seq tasks while handling long-range dependencies with ease. It relies entirely on the attention mechanism to compute representations of its input and output without using sequence-aligned RNNs. Originally, they consisted out of a encoder-decoder model, but we can also have encoder-transformers and decoder-transformers:
+
+**Encoder models** use only the encoder of a Transformer model. At each stage, the attention layers can access all the words in the initial sentence. These models are often characterized as having “bi-directional” attention, and are often called auto-encoding models. The pretraining of these models usually revolves around somehow corrupting a given sentence (for instance, by masking random words in it) and tasking the model with finding or reconstructing the initial sentence. That is why they are often called auto-encoding models, as these kind of language model aims to reconstruct the original data from corrupted input.
+
+Encoder models are best suited for tasks requiring an understanding of the full sentence, such as sentence classification, named entity recognition (and more generally word classification), and extractive question answering. Representatives of this family of models include: ALBERT, BERT, DistilBERT, ELECTRA, RoBERTa.
+
+**Decoder models** use only the decoder of a Transformer model. At each stage, for a given word the attention layers can only access the words positioned before it in the sentence. These models are often called auto-regressive models, as they use the model outputs of previous time steps for the new prediction. The pretraining of decoder models usually revolves around predicting the next word in the sentence. These models are best suited for tasks involving text generation. Representatives of this family of models include: CTRL, GPT, GPT-2, Transformer XL. 
+
+**Encoder-decoder models** (also called seq2seq models) use both parts of the Transformer architecture. At each stage, the attention layers of the encoder can access all the words in the initial sentence, whereas the attention layers of the decoder can only access the words positioned before a given word in the input. The pretraining of these models can be done using the objectives of encoder or decoder models, but usually involves something a bit more complex. For instance, T5 is pretrained by replacing random spans of text (that can contain several words) with a single mask special word, and the objective is then to predict the text that this mask word replaces. Seq2seq models are best suited for tasks revolving around generating new sentences depending on a given input, such as summarization, translation, or generative question answering. Representatives of this family of models include: BART, mBART, Marian, T5.
+
 
 ## Permutation-Based Language Modelling
 
