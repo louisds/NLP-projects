@@ -5,6 +5,8 @@
 
 ## Pragmatics vs. Semantics vs. Syntax vs. Morphology vs. Phonology vs. Phonetics
 
+<img src="[https://mma.prnewswire.com/media/1513369/Educative_Logo.jpg](https://github.com/louisds/NLP-projects/blob/main/images/semantic_pragmatic.png)"  width="600" height="300">
+
 ![alt text](https://github.com/louisds/NLP-projects/blob/main/images/semantic_pragmatic.png)
 
 **Pragmatics** identifies the meaning of words and phrases based on how language is used to communicate (i.e. emphasis on their context as well). Unlike semantics, which only concerns the meaning of the words, pragmatics goes a step further by looking at the same word in relation to its context. Thus, pragmatics explains how language users are able to overcome apparent ambiguity since it explains the meaning relies on the manner, time, place, etc. of an utterance.
