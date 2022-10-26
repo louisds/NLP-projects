@@ -74,7 +74,7 @@ The contextual relationship between candidates for named entities in the same se
 
 Named-entity recognition (NER) (also known as (named) entity identification, entity chunking, and entity extraction) is a subtask of information extraction that seeks to locate and classify named entities mentioned in unstructured text into pre-defined categories such as person names, organizations, locations, etc. Example:
 
-$Jim_{Person}$ bought 300 shares of $Acme Corp_{Organization}$ in $2006_{Time}$.
+$Jim_{Person}$ bought 300 shares of $Acme \ Corp_{Organization}$ in $2006_{Time}$.
 
 In this example, a person name consisting of one token, a two-token company name and a temporal expression have been detected and classified.
 
