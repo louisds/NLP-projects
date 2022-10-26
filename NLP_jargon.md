@@ -200,52 +200,221 @@ $$
 cos-similarity(v_1, v_2) = \frac{v_1 \cdot v_2}{\lVert v_1 \lVert \ \lVert v_2 \lVert}
 $$
 
-The Cosine similarity of two documents will range from 0 to 1. If the Cosine similarity score is 1, it means two vectors have the same orientation. The value closer to 0 indicates that the two documents have less similarity.
+The Cosine similarity of two documents will range from 0 to 1. If the Cosine similarity score is 1, it means two vectors have the same orientation. The value closer to 0 indicates that the two documents have less similarity. Hence, it is thus a judgment of orientation and not magnitude. This makes it a better metric than Euclidian distance for word similarity.
+
+## Jaccard Similarity
+
+Jaccard Similarity (also known as the Jaccard index and Intersection over Union) is used to determine the similarity between two text document,. This is done by measuring how close the two text documents are to each other in terms of their context, i.e. how many common words are exist over total words. Jaccard Similarity defined as an intersection of two documents divided by the union of that two documents that refer to the number of common words over a total number of words:
+
+$$
+J(doc_1, doc_2) = \frac{doc_1 \cap doc_2}{doc_1 \cup doc_2}
+$$
+
+Here, we will use the set of words to find the intersection and union of the document. The Jaccard Similarity score is in a range of 0 to 1. If the two documents are identical, Jaccard Similarity is 1. The Jaccard similarity score is 0 if there are no common words between two documents.
+
+## Term Frequency (TF)
+
+Term frequency (TF) is how often a term $t$ (i.e. a word) appears in a document $d$, divided by how many words there are. So it is a measure of how common a word is.
+
+$$
+TF(t, d) = \frac{count(t, d)}{|d|}
+$$
+
+Consider a document containing 100 words wherein the word apple appears 5 times. The term frequency (i.e., TF) for apple is then (5 / 100) = 0.05.
 
 ## Inverse Document Frequency (IDF)
 
+Inverse document frequency (IDF) measures how unique or rare a word $t$ is. It is defined as the natural logarithm of Total number of documents in our corpus $D$, divided by the number of documents with term $t$ in it.
+
+$$
+IDF(t, D) = ln \left(\frac{|D|}{|\{ d \in D: \ t \in d \} |} \right)
+$$
+
+It is sometimes defined slightly different (e.g. with a +1 in the numerator and denominator to prevent undefined errors). Now, assume we have 10M documents and the word apple appears in 1K of these. Then, the IDF is calculated as ln(10,000,000 / 1,000) = 9.21. 
+
 ## Term Frequency–Inverse Document Frequency (TF-IDF)
+
+TF-IDF is a numerical statistic that is intended to reflect how important a word is to a document $d$ in a corpus $D$. It is often used as a weighting factor in searches of information retrieval, text mining, and user modeling. In other words, TF-IDF is a measure of originality of a word by comparing the number of times a word appears in a document $d$ with the number of documents the word appears in. It is simply the product of TF and IDF.
+
+By combining TF with IDF, we have the weight of how much a word occurs in a document (TF), while at the same time this weight is being diminished for terms that occur very frequently in the corpus (i.e. document set) and being increased for terms that occur rarely. A good example would be "the". This word will probably have a high TF, but a low IDF, which means that the weight will decrease if we calculate TF-IDF. 
 
 ## Bag of words (BOW)
 
-## Skip gram
+BoW is used to extract feature sets from text during the data pre-processing phase, i.e. to convert a text document into numbers that can be used by a model. BOW models encode every word in the vocabulary as one-hot-encoded vector i.e. for vocabulary of size |V|, each word is represented by a |V| dimensional sparse vector with 1 at index corresponding to the word and 0 at every other index. In the weighted variation, it is a weighted sum according to frequency or TF-IDF scores. As vocabulary may potentially run into millions, bag of word models face scalability challenges. It is also not able to capture context.
+
+## Continuous Bag of words (CBOW) vs. Skip gram
+
+Both models will generate better feature (i.e. dense) vectors by using the context of a word and a Neural Network.
+
+**CBOW** used a Neural Network that tries to predict the current word from a window of surrounding context words. The order of the context words does not have an influence on the prediction. The CBOW model is several times faster to train than the skip-gram model, and it has slightly better accuracy for the frequent words.
+
+**Skip Gram** uses a Neural Network that tries to predict the surrounding window of context words, based on the current word. It weighs nearby context words more heavily than more distant words. Skip gram works well with small amounts of the training data, and is generallu better at representing rare words or phrases.
+
+## Word Co-occurence Matrix
+
+The co-occurrence matrix will have specific entities in rows (ER) and columns (EC). The purpose of this matrix is to present the number of times each ER appears in the same context as each EC. As a consequence, in order to use a co-occurrence matrix, you have to define your entites and the context in which they co-occur. Example: the matrix indicates how many times the row word (e.g. 'digital') is surrounded (in a sentence, or in the n word window - depends on the application and your choice of n) by the column word (e.g. 'pie'). Note that the co-occurrence matrix is always symmetric.
+
+
+## Negative Sampling
+
+A technique used to modify (or even optimize) the CBOW and Skip gram training. Instead of trying to predict the probability of being a nearby word for all the words in the vocabulary, we try to predict the probability that our training sample words are neighbors or not. So instead of having one giant softmax — classifying among |V| classes, we have now turned it into |V| binary classification problem.
+
+## Latent Semantic Indexing (LSI) (a.k.a. Analysis (LSA))
+
+## Latent Dirichlet Allocation (LDA)
+
+
+
 
 # 3) Advanced NLP and Deep Learning
 
 ## Masked Language Model
 
+A masked image modell masks words from a sequence of sentences and the designed model needs to predict the masked words to complete the sentence. 
+
 ## Ensemble Method
 
-## Latent Semantic Indexing
+Ensemble methods are approaches to reduce the variance of neural network models. This is done by training multiple models instead of a single model and by combining the predictions from these models. This is called ensemble learning and not only reduces the variance of predictions but also can result in predictions that are better than any single model. Combining the predictions from multiple neural networks adds a bias that in turn counters the variance of a single trained neural network model.
 
-## Latent Dirichlet Allocation (LDA)
+## Transfer Learning (TL)
 
-## Transfer Learning
+Transfer learning is a technique where we have a pre-trained deep learning model that is trained on a large dataset (e.g. Wikipedia), which we fine-tune to perform similar tasks on our own dataset.
 
-## Multi Task Learning
+## Multi Task Learning (MTL)
+
+Multi-task learning (MTL) is a field of machine learning in which models using data from multiple tasks are trained at the same time. This is done using shared representations to uncover the common ideas among a group of tasks that are connected. These shared representations help to overcome the well-known drawbacks of deep learning by increasing data efficiency. The two most common methods for performing MTL with deep neural networks are hard and soft parameter sharing.
+
+**Hard parameter sharing** is done by sharing the hidden layers amongst all jobs while at the same time maintaining several task-specific output layers. This is a very beneficial strategy since it reduces the danger of overfitting by having a model for diverse tasks using a common hidden layer.
+
+**Soft parameter sharing** adds a constraint to achieve similarity among related parameters rather than sharing the same value. Furthermore, we penalize the difference in parameters across the models that we train for each task. By loosely connecting the shared space representations, this method, in contrast to rigid sharing, allows activities greater flexibility.
+
+The main mechanisms of MTL are: Attention focusing, regularization, and implicit data augmentation. 
+
+## Meta-Learning
+
+Meta-learning is a field in machine learning studying approaches to learn better learning algorithms. Approaches aim at improving algorithms in various aspects, including data efficiency and generalizability. 
+
+## Continual Learning
+
+Continual learning, also known as lifelong learning or online machine learning is a fundamental concept in machine learning (ML), in which the models continuously learn and evolve based on the input of increasing amounts of data while retaining previously-learned knowledge.
 
 ## Feature-Extraction vs. Fine Tuning
 
-## Token, Segment and Position embedding
+These two types of transfer learning. In **finetuning**, we start with a pretrained model and update all of the model’s parameters for our new task, in essence retraining the whole model. In **feature extraction**, we start with a pretrained model and only update the final layer weights from which we derive predictions. It is called feature extraction because we use the pretrained NN as a fixed feature-extractor, and only change the output layer.
+
+## Special Tokens (CLS, SEP, MASK)
+
+These are special tokens that convey specific meaning to the encoder:
+
+**CLS** stands for classification. It is added to represent sentence-level classification. It is generally added at the start of a sequence so that it represents the entire sentence.
+
+**SEP** is used during the next sentence prediction. It is a delimiter token that helps the model know which is the next sentence. In the case of a single sentence, it is just added at the end.
+
+**MASK** is used during the Masked Language Modeling phase. It is used to represent the masked word to the model.
+
+## Token, Segment/Sentence and Position embedding
+
+These are three forms of embeddings:
+
+**Token embeddings** are needed to identify the word/subword being processed as input, as well as the token being masked. They are just the pre-trained embeddings for different words. In BERT, each word piece token will be converted into a 768-dimensional vector representation by the Token Embeddings layer.
+
+**Sentence or Segment embeddings** are needed for next sentence prediction (NSP). They are needed to easily tell apart the different parts of the input and are basically the sentence number that is encoded into a vector. The model must know whether a particular token belongs to sentence A or sentence B.
+
+**Positional embeddings** are needed to distinguish the same token in different positions. They are learned vectors for every possible position between 0 and the sequence length, indicating the position of the word within the sentence that is encoded into a vector. BERT was created to handle input sequences up to 512 characters long. This means that the Position Embeddings layer in BERT is a lookup table with a size of (512, 768) rows, with the first row representing the vector representation of any word in the first position, the second row representing any word in the second position, and so on.
+
+For example in BERT models, we sum up these three types of embedding, because these are the pieces of information needed to accomplish the loss' tasks, which is, both masked language modeling (i.e. predicting the masked tokens) and next sentence prediction (i.e. predict whether the second segment followed the first segment in the original text). A normal transformer architecture already adds token embeddings and positional embeddings (the latter because TFs don't have a sequential nature as recurrent neural networks, so some information about the order of the input is needed - if you disregard this, our output will be permutation-invariant). 
+
+## Encoder-Decoder model (seq2seq)
+
+Encoder-Decoder model consists of two RNNs (e.g. GRU, LSTM, etc.) and are very popular in translation. It encodes the input sequence to one fixed length vector from which to decode the output at each time step. An issue with this structure is the information bottleneck layer, where the whole input sequence is just represented as one vector. This issue is believed to a problem when decoding long sequences because it make difficult for the neural network to cope with long sentences, especially those that are longer than the sentences in the training corpus.
 
 ## Attention mechanism
+
+Attention is a mechanism that solves the bottleneck layer problem that arises in orginal seq2seq RNN models. On each step of the decoding, the attention mechanism directly connects to the encoder and focuses on a particular part of the input sequence. We concatenate the attention output with the decoder hidden state to predict the next word in the decoder sequence. As opposed to normal attention (where Y pays attention to X), there is also self-attention (where X pays attention to X):
+
+**Self-Attention** is an attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence. This allows the inputs to interact with each other (“self”) and find out who they should pay more attention to (“attention”). The outputs are aggregates of these interactions and attention scores. This can for example be used in an encoder. A decoder can use both self-attention and normal attention.
+
+Next to single-head attention, we also have multi-head attention. Multi-head attention runs through several attention heads with different parameters in parallel. The independent attention outputs are then concatenated and linearly transformed into the expected dimension
 
 ## Transformer
 
 ## Permutation-Based Language Modelling
 
+Permutation-Based Language Modelling is a type of language modeling, used by XLNet to outperform BERT models. What made BERT stand out among all traditional language models, was its ability to capture the bidirectional context. However, its major flaw was introducing [MASK] tokens and the assumption that the predicted (masked) tokens are independent of each other given the unmasked tokens (i.e. parallel independent predictions in pre-training). 
+
+Permutation-Based Language Modelling builds a model that incorporates bidirectional context while avoiding the [MASK] token and parallel independent predictions. They are trained to predict one token given preceding context like a traditional language model, but instead of predicting the tokens in sequential order, it predicts tokens in some random order. To make this clear, let’s take the following sentence as an example:
+
+“Sometimes you have to be your own hero.”
+
+A traditional language model would predict the tokens in the order
+
+“Sometimes”, “you”, “have”, “to”, “be”, “your”, “own”, “hero”
+
+where each token uses all previous tokens as context.
+
+In permutation language modeling, the order of prediction is not necessarily left to right. For instance, it could be
+
+“own”, “Sometimes”, “to”, “be”, “your”, “hero”, “you”, “have”
+
+where “Sometimes” would be conditioned on seeing “own “, “to” would be conditioned on seeing “own” & “Sometimes” and so on.
+
+## Embedding Factorization
+
+Embedding matrices consume a lot of memory which poses a challenge for edge deployment. They typically contain most of the parameters for language models and about a third for machine translation systems. Embedding factorization is a compression method to reduce the amount of memory needed. Example technique: Distilled Embedding,which is based on low-rank matrix decomposition and knowledge distillation.
+
+# 4) Model Training and Evaluation
+
+## Precision
+
+Precision is an indicator of a machine learning model’s performance and reflects the quality of a positive prediction made by the model. Precision refers to the number of true positives divided by the total number of positive predictions:
+
+$$
+PRECISION = \frac{TP}{TP + FP}
+$$
+
+## Recall/Sensitivity (True Positive Rate)
+
+The recall measures the model's ability to detect positive samples. The higher the recall, the more positive samples detected. It is calculated as the ratio between the numbers of positive samples correctly classified to the total number of positive samples:
+
+$$
+RECALL = \frac{TP}{TP + FN}
+$$
+
+## Specificity (True Negative Rate)
+
+Specificity tells us what proportion of the negative class got correctly classified:
+
+$$
+SPECIFICITY = \frac{TN}{TN + FP}
+$$
+
+
+## F1 score
+
+F1-score is one of the most important evaluation metrics in classification. It elegantly sums up the predictive performance of a model by combining two otherwise competing metrics — precision and recall. It is defined as follows:
+
+$$
+F1 = 2 \frac{PRECISION \cdot RECALL}{PRECISION + RECALL}
+$$
+
+Which is essentially taking the harmonic mean of precision and recall.
+
+## Receiver Operator Characteristic (ROC) Curve 
+
+The ROC curve is an evaluation metric for binary classification problems. It is a probability curve that plots the TPR (TP/TP+FN) against the FPR (FP/FP+TN) at various threshold values and essentially separates the ‘signal’ from the ‘noise’.
+
+## Area Under the Curve (AUC)
+
+The AUC is the measure of the ability of a classifier to distinguish between classes and is used as a summary of the ROC curve. The higher the AUC, the better the performance of the model at distinguishing between the positive and negative classes.
+
+When AUC = 1, then the classifier is able to perfectly distinguish between all the Positive and the Negative class points correctly. If, however, the AUC had been 0, then the classifier would be predicting all Negatives as Positives, and all Positives as Negatives. When 0.5 < AUC < 1, there is a high chance that the classifier will be able to distinguish the positive class values from the negative class values. This is so because the classifier is able to detect more numbers of True positives and True negatives than False negatives and False positives.
+
+When AUC=0.5, then the classifier is not able to distinguish between Positive and Negative class points. Meaning either the classifier is predicting random class or constant class for all the data points.
+
 ## Scheduling Learning Rate
 
 ## Label Smoothening
 
-## Parameter Sharing
+When using deep learning models for classification tasks, we usually encounter the following problems: overfitting, and overconfidence. Overfitting is well studied and can be tackled with early stopping, dropout, weight regularization etc. On the other hand, we have less tools to tackle overconfidence. Label smoothing is a regularization technique that addresses both problems.
 
-## Embedding Factorization
-
-## Precision
-
-## Recall
-
-## F1 score
-
-## AUC
+Label smoothing replaces one-hot encoded label vector $y_{hot}$ with a mixture of $y_{hot}$ and the uniform distribution. Label smoothing is used when the loss function is cross entropy, and the model applies the softmax function to the penultimate layer’s logit vectors z to compute its output probabilities p. Original one-hot encoded labels encourages largest possible logit gaps to be fed into the softmax function. Intuitively, large logit gaps combined with the bounded gradient will make the model less adaptive and too confident about its predictions. In contrast, smoothed labels encourages small logit gaps, which restrains the largest logit from becoming much bigger than the rest. This results in better model calibration and prevents overconfident predictions.
