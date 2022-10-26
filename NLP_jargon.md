@@ -1,4 +1,4 @@
-# 1) Linguistics and NLP Tasks
+# 1) Linguistics and NLP tasks
 
 ## Lexicon
 
@@ -8,7 +8,7 @@ Lexicon refers to the component of an NLP system that contains information (sema
 
 The corpus is the collection of texts used to train an NLP model, while the vocabulary is the collection of words used to train an NLP model. Example: BERT is an advanced NLP model trained on the entire content of Wikipedia (originally the English language Wikipedia). The corpus is the collection of Wikipedia articles it was trained on. The vocabulary is the vocabulary of the English language.
 
-## Pragmatics vs. Semantics vs. Syntax vs. Morphology vs. Phonology vs. Phonetics
+## Pragmatics/Semantics/Syntax/Morphology/Phonology/Phonetics
 
 <img src="https://github.com/louisds/NLP-projects/blob/main/images/semantic_pragmatic.png"  width="200">
 
@@ -34,14 +34,13 @@ Both methods are types of sentence parsing, which is done by taking a sentence a
 
 **Constituency Parsing** is based on the formalism of context-free grammars. In this type of tree, the sentence is divided into constituents, that is, sub-phrases that belong to a specific category in the grammar. In English, for example, the phrases “a dog”, “a computer on the table” and “the nice sunset” are all noun phrases, while “eat a pizza” and “go to the beach” are verb phrases. This a difference with dependency parsing, which looks at the individual words.
 
-## Lexical vs. Structural Ambiguity
+## Lexical-Semantic vs. Structural-Syntactic vs. Pragmatic Ambiguity
 
-Lexical ambiguity occurs when a word has more than one meaning, while structural ambiguity arises when the sentence’s meaning is unclear because of how words are related. Some examples:
+**Lexical or Semantic ambiguity** occurs when a word has more than one meaning. Example: “I went to the bank”. There are several dictionary meanings for the word “bank” Here, you can’t know if “bank” is a place where money is held or a riverbank. Lexical ambiguity is a subtype of semantic ambiguity where a word or morpheme is ambiguous instead of an expression.
 
-**Lexical ambiguity**: “I went to the bank” There are several dictionary meanings for the word “bank” Here, you can’t know if “bank” is a place where money is held or a riverbank.
+**Structural or Syntactic ambiguity** arises when the sentence’s meaning is unclear because of how words are related. Example: “The chicken is ready to eat”. You can’t tell if the chicken will do the eating or if the chicken will be eaten. 
 
-**Structural ambiguity**: “The chicken is ready to eat” You can’t tell if the chicken will do the eating or if the chicken will be eaten. 
-
+**Pragmatic ambiguity** arises when the statement is not specific, and the context does not provide the information needed to clarify the statement. It deals with the use of real-world knowledge and understanding how this impacts the meaning of what is being communicated. Example: "Do you know what time it is?". This could just be someone asking for the time, or someone being angry because other person was too late.
 
 ## Taxonomy and Ontology
 
@@ -53,6 +52,9 @@ Taxonomy and ontology work in different ways to apply structure to language.
 
 Together, they help disambiguate language so programs can perform with more accuracy. In the example “The chicken is ready to eat”, the taxonomy can classify the chicken as an animal, while ontology can apply relational understanding to further define the term “chicken” as either an animal or a type of food to be eaten.
 
+## Soundex
+
+Soundex converts an alphanumeric string to a four-character code that is based on how the string sounds when spoken in English.
 
 ## Information Extraction vs. Retrieval
 
@@ -97,6 +99,20 @@ Hawaï -> https://en.wikipedia.org/wiki/Hawaii
 ## Relation Extraction
 
 Relationship extraction is the task of extracting semantic relationships from a text. Extracted relationships usually occur between two or more entities of a certain type (e.g. Person, Organisation, Location) and fall into a number of semantic categories (e.g. married to, employed by, lives in). For example in "Louis loves Dasha", we could extract the relationship Louis -> Married with -> Dasha. 
+
+## Sentence Order Prediction (SOP)
+
+## POS tagging
+
+## Lemmatization
+
+## Stemming
+
+## Tokenization
+
+## Keyword Normalization
+
+
 
 # 2) NLP Basics
 
@@ -157,25 +173,11 @@ So PMI computes the (log) probability of co-occurrence scaled by the product of 
 
 ## Skip gram
 
-## Pragmatic/Lexical/Syntactic/Semantic Ambiguity
+# 3) Advanced NLP and Deep Learning
 
 ## Masked Language Model
 
-## POS tagging
-
 ## Ensemble Method
-
-## Name Entity Recognition (NER)
-
-## Lemmatization
-
-## Stemming
-
-## Tokenization
-
-## Soundex
-
-## Keyword Normalization
 
 ## Latent Semantic Indexing
 
@@ -200,8 +202,6 @@ So PMI computes the (log) probability of co-occurrence scaled by the product of 
 ## Label Smoothening
 
 ## Parameter Sharing
-
-## Sentence Order Prediction (SOP)
 
 ## Embedding Factorization
 
