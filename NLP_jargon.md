@@ -93,7 +93,9 @@ Example for Wikipedia:
 Barack Obama was born in Hawaï.
 
 Barack -> https://en.wikipedia.org/wiki/Barack_Obama
+
 Obama -> https://en.wikipedia.org/wiki/Barack_Obama
+
 Hawaï -> https://en.wikipedia.org/wiki/Hawaii
 
 ## Relation Extraction
@@ -102,17 +104,40 @@ Relationship extraction is the task of extracting semantic relationships from a 
 
 ## Sentence Order Prediction (SOP)
 
+Sentence order prediction is the task of finding the correct order of sentences in a randomly ordered document. Correctly ordering the sentences requires an understanding of coherence with respect to the chronological sequence of events described in the text. It can be introduced as a self-supervised loss (used in ALBERT), where it primary focuses on inter-sentence coherence and is designed to address the ineffectiveness of the next sentence prediction (NSP) loss (proposed in the original BERT).
+
+## Co-reference Resolution (CRS)
+
+Co-reference resolution is the task of finding all expressions that refer to the same entity in a text. It is an important step for a lot of higher level NLP tasks that involve natural language understanding such as document summarization, question answering, and information extraction. Example:
+
+"I voted for Bert because he was most aligned with my values" - she said.
+
+CRS will link I, my, and she, with the same person, and Bert and he.
+
+
 ## POS tagging
 
-## Lemmatization
-
-## Stemming
+Part of Speech (POS) is a  category to which a word is assigned in accordance with its syntactic functions. In English the main parts of speech are noun, pronoun, adjective, determiner, verb, adverb, preposition, conjunction, and interjection. POS tagging is the process of assigning a specific tag to a word in our corpus since the POS tags are used to describe the lexical terms that we have within our text. POS tags describe the characteristic structure of lexical terms within a sentence or text, therefore, we can use them for making assumptions about semantics. Other applications of POS tagging include: Named Entity Recognition, Co-reference Resolution, Speech Recognition, etc.
 
 ## Tokenization
 
+Tokenization is the process of breaking a stream of textual data into words, terms, sentences, symbols, or some other meaningful elements called tokens. This is necessary to create an input format for an NLP model. Tokenization might seem simple (e.g. just stringsplit with spaces to create a list of words), but there are different ways of tokenization (e.g. taking New York as one token instead of two, etc.). In short: splitting a text or documents in tokens, which are the basic meaningful unit of language. 
+
+## Morpheme
+
+Morpheme is defined as a base form of the word. A token is basically made up of two components: one is morphemes and the other is inflectional formlike prefix or suffix. For example, consider the word Antinationalist (Anti + national+ ist ) which is made up of Anti and ist as inflectional forms and national as the morpheme.
+
 ## Keyword Normalization
 
+Normalization is the process of converting a token into its base form. In the normalization process, the inflectional form of a word is removed so that the base form can be obtained. Example: the normal form of "antinationalist" is national. Normalization is helpful in reducing the number of unique tokens present in the text, removing the variations in a text, and also cleaning the text by removing redundant information. Two popular methods used for normalization are stemming and lemmatization.
 
+## Stemming vs. Lemmatization
+
+**Stemming** usually refers to a crude heuristic process that chops off the ends of words in the hope of achieving this goal correctly most of the time, and often includes the removal of derivational affixes.
+
+**Lemmatization** usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma.
+
+Example: If confronted with the token "saw", stemming might return just s, whereas lemmatization would attempt to return either see or saw depending on whether the use of the token was as a verb or a noun. 
 
 # 2) NLP Basics
 
