@@ -2,6 +2,11 @@
 
 ## Lexicon
 
+Lexicon refers to the component of an NLP system that contains information (semantic, grammatical, ...) about individual words or word strings. In practice, a lexical entry will include further information about the roles the word plays, such as feature information - for example, whether a verb is transitive, intransitive, ditransitive, etc., what form the verb takes (e.g. present participle, or past tense, etc.).
+
+## Vocabulary vs. Corpus
+
+The corpus is the collection of texts used to train an NLP model, while the vocabulary is the collection of words used to train an NLP model. Example: BERT is an advanced NLP model trained on the entire content of Wikipedia (originally the English language Wikipedia). The corpus is the collection of Wikipedia articles it was trained on. The vocabulary is the vocabulary of the English language.
 
 ## Pragmatics vs. Semantics vs. Syntax vs. Morphology vs. Phonology vs. Phonetics
 
@@ -49,11 +54,31 @@ Taxonomy and ontology work in different ways to apply structure to language.
 Together, they help disambiguate language so programs can perform with more accuracy. In the example “The chicken is ready to eat”, the taxonomy can classify the chicken as an animal, while ontology can apply relational understanding to further define the term “chicken” as either an animal or a type of food to be eaten.
 
 
-## Information Extraction
+## Information Extraction vs. Retrieval
 
-## Entity Recognition vs. Disambiguation vs. Linking
+**Information Extraction (IE)** is the the process of sifting through unstructured data and extracting vital information into more editable and structured data forms. Examples are summaries from vast collections of text like Wikipedia, conversational AI systems like chatbots, extracting stock market announcements from financial news, sentiment analysis, topic modeling, NER, etc.
 
-## Document Retrieval and Search
+**Information Retrieval (IR)** searches a collection of natural language documents with the goal of retrieving exactly the set of documents that matches a user’s question (i.e. query). Think of library systems, google search, etc. 
+
+## Named Entity
+
+In information extraction, a named entity is a real-world object, such as a person, location, organization, product, etc., that can be denoted with a proper name. It can be abstract or have a physical existence. Examples of named entities include Barack Obama (person), New York City (city), Volkswagen Golf (car), or anything else that can be named. Named entities can simply be viewed as entity instances (e.g., New York City is an instance of a city).
+
+## Congruence
+
+The contextual relationship between candidates for named entities in the same sentence. 
+
+<img src="https://github.com/louisds/NLP-projects/blob/main/images/congruence.png"  width="200">
+
+## Named Entity Recognition (NER)
+
+Named-entity recognition (NER) (also known as (named) entity identification, entity chunking, and entity extraction) is a subtask of information extraction that seeks to locate and classify named entities mentioned in unstructured text into pre-defined categories such as person names, organizations, locations, etc. Example:
+
+$Jim_{Person}$ bought 300 shares of $Acme Corp_{Organization}$ in $2006_{Time}$.
+
+In this example, a person name consisting of one token, a two-token company name and a temporal expression have been detected and classified.
+
+## Entity Recognition vs. Entity Disambiguation vs. Entity Linking
 
 ## Relation Extraction
 
