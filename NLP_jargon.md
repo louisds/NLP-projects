@@ -263,9 +263,6 @@ A technique used to modify (or even optimize) the CBOW and Skip gram training. I
 
 ## Latent Dirichlet Allocation (LDA)
 
-
-
-
 # 3) Advanced NLP and Deep Learning
 
 ## Masked Language Model
@@ -326,7 +323,13 @@ For example in BERT models, we sum up these three types of embedding, because th
 
 ## Encoder-Decoder model (seq2seq)
 
-Encoder-Decoder model consists of two RNNs (e.g. GRU, LSTM, etc.) and are very popular in translation. It encodes the input sequence to one fixed length vector from which to decode the output at each time step. An issue with this structure is the information bottleneck layer, where the whole input sequence is just represented as one vector. This issue is believed to a problem when decoding long sequences because it make difficult for the neural network to cope with long sentences, especially those that are longer than the sentences in the training corpus.
+Encoder-Decoder model consists of two RNNs (e.g. GRU, LSTM, etc.) and are very popular in translation. It encodes the input sequence to one fixed length vector from which to decode the output at each time step. An issue with this structure is the information bottleneck layer, where the whole input sequence is just represented as one vector. This issue is believed to a problem when decoding long sequences because it make difficult for the neural network to cope with long sentences, especially those that are longer than the sentences in the training corpus. Sometimes we only need an encoder, or only need a decoder. A summary of all the versions and their applications:
+
+**Encoder-only models:** Good for tasks that require understanding of the input, such as sentence classification and named entity recognition.
+
+**Decoder-only models:** Good for generative tasks such as text generation.
+
+**Encoder-decoder models or Seq2Seq models:** Good for generative tasks that require an input, such as translation or summarization.
 
 ## Attention mechanism
 
@@ -337,6 +340,7 @@ Attention is a mechanism that solves the bottleneck layer problem that arises in
 Next to single-head attention, we also have multi-head attention. Multi-head attention runs through several attention heads with different parameters in parallel. The independent attention outputs are then concatenated and linearly transformed into the expected dimension
 
 ## Transformer
+
 
 ## Permutation-Based Language Modelling
 
@@ -410,6 +414,21 @@ The AUC is the measure of the ability of a classifier to distinguish between cla
 When AUC = 1, then the classifier is able to perfectly distinguish between all the Positive and the Negative class points correctly. If, however, the AUC had been 0, then the classifier would be predicting all Negatives as Positives, and all Positives as Negatives. When 0.5 < AUC < 1, there is a high chance that the classifier will be able to distinguish the positive class values from the negative class values. This is so because the classifier is able to detect more numbers of True positives and True negatives than False negatives and False positives.
 
 When AUC=0.5, then the classifier is not able to distinguish between Positive and Negative class points. Meaning either the classifier is predicting random class or constant class for all the data points.
+
+## BLUE Score
+
+BLUE (Bi-Lingual Evaluation Understudy) is a popular evaluation metric for Machine Translation. In short, BLEU compares the machine’s translation (known as the candidate translation) with existing human-generated translations (known as the reference translations). BLEU works by computing the precision, i.e. the fraction of tokens from the candidate that appear (or are “covered”) by the references, while also penalizing words that appear in the candidate more times than it appears in any of the references. 
+
+## Word Error Rate (WER)
+
+Word error rate (WER) is a common metric of the performance of a speech recognition or machine translation system. The general difficulty of measuring performance lies in the fact that the recognized word sequence can have a different length from the reference word sequence (supposedly the correct one). The WER solves this by using metrics derived from the Levenshtein distance by working at the word level (number of substitutions S, deletions D, insertions I for the words to get from candidate to reference sentence):
+
+$$
+WER = \frac{S + D + I}{S + D + C}
+$$
+
+
+Where C is the number of correct words and (S+D+C) is the number of words in the reference. 
 
 ## Scheduling Learning Rate
 
