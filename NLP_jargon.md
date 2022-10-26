@@ -5,7 +5,7 @@
 
 ## Pragmatics vs. Semantics vs. Syntax vs. Morphology vs. Phonology vs. Phonetics
 
-<img src="[https://mma.prnewswire.com/media/1513369/Educative_Logo.jpg](https://github.com/louisds/NLP-projects/blob/main/images/semantic_pragmatic.png)"  width="600" height="300">
+<img src="https://github.com/louisds/NLP-projects/blob/main/images/semantic_pragmatic.png"  width="600" height="300">
 
 ![alt text](https://github.com/louisds/NLP-projects/blob/main/images/semantic_pragmatic.png)
 
