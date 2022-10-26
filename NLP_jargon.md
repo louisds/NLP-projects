@@ -188,7 +188,19 @@ $$
 
 So PMI computes the (log) probability of co-occurrence scaled by the product of the single probability of occurrence. When the ratio equals 1 (hence the log equals 0), it means that the two words together don’t form a unique concept: they co-occur by chance. On the other hand, if either one of the words (or even both of them) has a low probability of occurrence if singularly considered, but its joint probability together with the other word is high, it means that the two are likely to express a unique concept.
 
+# Word Embeddings
+
+A word embedding is a learned representation for text where words that have the same meaning have a similar representation. Individual words are represented as real-valued vectors in a predefined vector space. Each word is mapped to one vector and the vector values can for example be learned in a way that resembles a neural network. Each word is represented by a real-valued vector, often tens or hundreds of dimensions. This is contrasted to the thousands or millions of dimensions required for sparse word representations, such as a one-hot encoding. Examples are Word2Vec, GloVe, BERT, etc.
+
 ## Cosine Similarity
+
+Cosine similarity is one of the metrics to measure the similarity between two words (or even two documents, irrespective of their size). Mathematically, Cosine similarity metric measures the cosine of the angle between two n-dimensional vectors projected in a multi-dimensional space:
+
+$$
+cos-similarity(v_1, v_2) = \frac{v_1 \cdot v_2}{\lVert v_1 \lVert \ \lVert v_2 \lVert}
+$$
+
+The Cosine similarity of two documents will range from 0 to 1. If the Cosine similarity score is 1, it means two vectors have the same orientation. The value closer to 0 indicates that the two documents have less similarity.
 
 ## Inverse Document Frequency (IDF)
 
