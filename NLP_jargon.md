@@ -2,11 +2,10 @@
 
 ## Lexicon
 
-In short, syntax refers to grammar, while semantics refers to meaning. **Syntax** is the set of rules needed to ensure a sentence is grammatically correct. **Semantics** is how one’s lexicon, grammatical structure, tone, and other elements of a sentence coalesce to communicate its meaning. 
 
 ## Pragmatics vs. Semantics vs. Syntax vs. Morphology vs. Phonology vs. Phonetics
 
-![alt text](https://github.com/louisds/NLP-projects/blob/main/images/semantic_pragmatic.png)
+![alt text](https://github.com/louisds/NLP-projects/blob/main/images/semantic_pragmatic.png){ width: 200px; }
 
 **Pragmatics** identifies the meaning of words and phrases based on how language is used to communicate (i.e. emphasis on their context as well). Unlike semantics, which only concerns the meaning of the words, pragmatics goes a step further by looking at the same word in relation to its context. Thus, pragmatics explains how language users are able to overcome apparent ambiguity since it explains the meaning relies on the manner, time, place, etc. of an utterance.
 
