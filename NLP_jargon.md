@@ -68,7 +68,7 @@ In information extraction, a named entity is a real-world object, such as a pers
 
 The contextual relationship between candidates for named entities in the same sentence. 
 
-<img src="https://github.com/louisds/NLP-projects/blob/main/images/congruence.png"  width="200">
+<img src="https://github.com/louisds/NLP-projects/blob/main/images/congruence.png"  width="500">
 
 ## Named Entity Recognition (NER)
 
@@ -93,8 +93,7 @@ p(w_1, ..., w_n) = p(w_1) \cdot p(w_2|w_1) ... p(w_n|w_1, ..., w_{n-1})
 $$
 
 ## Source Channel Framework
-
-![alt text](https://github.com/louisds/NLP-projects/blob/main/images/noisy_channel_model.png)
+<img src="https://github.com/louisds/NLP-projects/blob/main/images/noisy_channel_model.png"  width="500">
 
 The source channel framework or noisy channel framework is a framerwork used in spell checking, speech recognition, translation, POS tagging, etc. It consists of a message (input X) that is encoded and fed into a (noisy) channel. The output from the noisy channel (output Y) is then decoded (decoded message X'), attempting to reconstruct the original message based on this noisy output. In NLP we do not usually act on encoding. The problem is reduced to decoding the noisy output Y for getting the most likely input given the output. 
 
