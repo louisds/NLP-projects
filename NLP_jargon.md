@@ -78,6 +78,22 @@ $Jim_{Person}$ bought 300 shares of $Acme \ Corp_{Organization}$ in $2006_{Time}
 
 In this example, a person name consisting of one token, a two-token company name and a temporal expression have been detected and classified.
 
+## Named Entity Recognition and Disambiguation (NERD)
+
+Named Entity Recognition and Disambiguation (NERD) or Named Entity Linking (NEL) is the task of recognizing (i.e. NER) and disambiguating (i.e. NED) named entities to a knowledge base (e.g. Wikidata, DBpedia, or YAGO). It can be split in two classes of approaches
+
+**End-to-End:** processing a piece of text to extract the entities (i.e. Named Entity Recognition) and then disambiguate these extracted entities to the correct entry in a given knowledge base (e.g. Wikidata, DBpedia, YAGO).
+
+**Disambiguation-Only:** contrary to the first approach, this one directly takes gold standard named entities as input and only disambiguates them to the correct entry in a given knowledge base.
+
+Example for Wikipedia:
+
+Barack Obama was born in Hawaï.
+
+Barack -> https://en.wikipedia.org/wiki/Barack_Obama
+Obama -> https://en.wikipedia.org/wiki/Barack_Obama
+Hawaï -> https://en.wikipedia.org/wiki/Hawaii
+
 ## Entity Recognition vs. Entity Disambiguation vs. Entity Linking
 
 ## Relation Extraction
