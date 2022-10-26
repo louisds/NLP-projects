@@ -64,12 +64,6 @@ Together, they help disambiguate language so programs can perform with more accu
 
 In information extraction, a named entity is a real-world object, such as a person, location, organization, product, etc., that can be denoted with a proper name. It can be abstract or have a physical existence. Examples of named entities include Barack Obama (person), New York City (city), Volkswagen Golf (car), or anything else that can be named. Named entities can simply be viewed as entity instances (e.g., New York City is an instance of a city).
 
-## Congruence
-
-The contextual relationship between candidates for named entities in the same sentence. 
-
-<img src="https://github.com/louisds/NLP-projects/blob/main/images/congruence.png"  width="500">
-
 ## Named Entity Recognition (NER)
 
 Named-entity recognition (NER) (also known as (named) entity identification, entity chunking, and entity extraction) is a subtask of information extraction that seeks to locate and classify named entities mentioned in unstructured text into pre-defined categories such as person names, organizations, locations, etc. Example:
@@ -77,6 +71,12 @@ Named-entity recognition (NER) (also known as (named) entity identification, ent
 $Jim_{Person}$ bought 300 shares of $Acme \ Corp_{Organization}$ in $2006_{Time}$.
 
 In this example, a person name consisting of one token, a two-token company name and a temporal expression have been detected and classified.
+
+## Named Entity Congruence
+
+The contextual relationship between candidates for named entities in the same sentence. 
+
+<img src="https://github.com/louisds/NLP-projects/blob/main/images/congruence.png"  width="500">
 
 ## Named Entity Recognition and Disambiguation (NERD)
 
@@ -94,9 +94,9 @@ Barack -> https://en.wikipedia.org/wiki/Barack_Obama
 Obama -> https://en.wikipedia.org/wiki/Barack_Obama
 Hawaï -> https://en.wikipedia.org/wiki/Hawaii
 
-## Entity Recognition vs. Entity Disambiguation vs. Entity Linking
-
 ## Relation Extraction
+
+Relationship extraction is the task of extracting semantic relationships from a text. Extracted relationships usually occur between two or more entities of a certain type (e.g. Person, Organisation, Location) and fall into a number of semantic categories (e.g. married to, employed by, lives in). For example in "Louis loves Dasha", we could extract the relationship Louis -> Married with -> Dasha. 
 
 # 2) NLP Basics
 
