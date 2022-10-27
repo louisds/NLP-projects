@@ -429,6 +429,24 @@ When AUC=0.5, then the classifier is not able to distinguish between Positive an
 
 BLUE (Bi-Lingual Evaluation Understudy) is a popular evaluation metric for Machine Translation. In short, BLEU compares the machine’s translation (known as the candidate translation) with existing human-generated translations (known as the reference translations). BLEU works by computing the precision, i.e. the fraction of tokens from the candidate that appear (or are “covered”) by the references, while also penalizing words that appear in the candidate more times than it appears in any of the references. 
 
+## ROUGE
+
+ROUGE is a set of evaluation metrics, rather than just one. We will cover the main ones that are most likely to be used:
+
+**ROUGE-N** measures the number of matching ‘n-grams’ between our model-generated text and a reference text. The reference is a human-made best-case output — so for automated summarization is would be a human-made summary of our input text. For machine translation, it would be a professional translation of our input text.
+
+**ROUGE-Recall** counts the number of overlapping n-grams found in both the model output and reference text and then divides this number by the total number of n-grams in the reference. This is great for ensuring our model is capturing all of the information contained in the reference but this isn’t so great at ensuring our model isn’t just pushing out a huge number of words to game the recall score.
+
+**ROUGE-Precision** counts the number of overlapping n-grams found in both the model output and reference text and then divides this number by the total number of n-grams in the model output. This makes sure that our model isn't just pushing out a huge number of words.
+
+**ROUGE-F1-Score** gives us a reliable measure of our model performance that relies not only on the model capturing as many words as possible (recall) but doing so without outputting irrelevant words (precision).
+
+**ROUGE-L** measures the longest common subsequence (LCS) between our model output and reference. All this means is that we count the longest sequence of tokens that is shared between both. The idea here is that a longer shared sequence would indicate more similarity between the two sequences. We can apply our recall and precision calculations just like before — but this time we replace the match with LCS.
+
+**ROUGE-S** or skip-gram concurrence metric allows us to search for consecutive words from the reference text, that appear in the model output but are separated by one-or-more other words.
+
+ROUGE is a great evaluation metric but comes with some drawbacks. In particular, ROUGE does not cater for different words that have the same meaning, as it measures syntactical matches rather than semantics.
+
 ## Word Error Rate (WER)
 
 Word error rate (WER) is a common metric of the performance of a speech recognition or machine translation system. The general difficulty of measuring performance lies in the fact that the recognized word sequence can have a different length from the reference word sequence (supposedly the correct one). The WER solves this by using metrics derived from the Levenshtein distance by working at the word level (number of substitutions S, deletions D, insertions I for the words to get from candidate to reference sentence):
